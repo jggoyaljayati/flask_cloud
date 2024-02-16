@@ -14,7 +14,7 @@ def home():
         return Response(("{}:{}").format(filename, result), status=200, mimetype='application/json')
 
     except Exception as e:
-        return Response(f"Error: {str(e)}", status=500, mimetype='application/json')
+        return Response(f"Error: {str(e)}", status=400, mimetype='application/json')
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
