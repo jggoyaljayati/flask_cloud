@@ -33,15 +33,13 @@ def scale():
             if messages - activeInstances > 0:
                 if groupedInstances['stopped']:
                     ec2.start_instances(InstanceIds=groupedInstances['stopped'][:(messages - activeInstances)])
-                    # time.sleep(10)
+                    time.sleep(5)
             elif messages - activeInstances < 0:
                 if groupedInstances['running']:
                     ec2.stop_instances(InstanceIds=groupedInstances['running'][:abs(messages - activeInstances)])
-                    # time.sleep(10)
-            # else:
-            #     time.sleep(5)
+                    time.sleep(5)
         except Exception as e:
-            print(e)
+            print("Error: ", e)
 
 
 if __name__ == "__main__":
