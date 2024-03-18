@@ -1,7 +1,7 @@
 import time
 import boto3
 
-request_queue_url = 'https://sqs.us-east-1.amazonaws.com/654654147126/1227629236-req-queue'
+request_queue_url = 'https://sqs.us-east-1.amazonaws.com/975049916042/1227629236-req-queue'
 
 sqs = boto3.client('sqs', region_name="us-east-1")
 ec2 = boto3.client('ec2', region_name="us-east-1")
